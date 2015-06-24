@@ -25,4 +25,10 @@ describe NumToWord do
       expect(NumToWord.new('1,000').instance_variable_get(:@string_number)).to eq('1000')
     end
   end
+
+  describe 'NAMES' do
+    it 'should return a hash of mappings' do
+      expect(NumToWord::NAMES).to be_a(Hash)
+    end
+  end
 end
