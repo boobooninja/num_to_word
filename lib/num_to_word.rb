@@ -1,7 +1,7 @@
 class NumToWord
 
   def initialize number
-    @string_number = number.to_s
+    @string_number = number.to_s.gsub(/,/, '')
     @string_name = parse
   end
 

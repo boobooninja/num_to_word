@@ -20,5 +20,9 @@ describe NumToWord do
       expect(@instance.instance_variable_get(:@string_number)).to eq('123')
       expect(@instance.instance_variable_get(:@string_name)).to eq('')
     end
+
+    it 'should remove any commas from the number' do
+      expect(NumToWord.new('1,000').instance_variable_get(:@string_number)).to eq('1000')
+    end
   end
 end
