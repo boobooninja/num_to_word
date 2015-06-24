@@ -1,7 +1,7 @@
 class NumToWord
 
   def initialize number
-    @number = number
+    @string_number = number.to_s
     @string_name = parse
   end
 
@@ -12,5 +12,6 @@ class NumToWord
   private
 
   def parse
+    ''
   end
 end

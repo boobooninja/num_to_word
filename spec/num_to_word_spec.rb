@@ -15,5 +15,10 @@ describe NumToWord do
     it 'should return an object of class NumToWord' do
       expect(@instance).to be_a(NumToWord)
     end
+
+    it 'should set attributes @string_number and @string_name' do
+      expect(@instance.instance_variable_get(:@string_number)).to eq('123')
+      expect(@instance.instance_variable_get(:@string_name)).to eq('')
+    end
   end
 end
