@@ -46,6 +46,36 @@ class NumToWord
   private
 
   def parse
-    ''
+    num_array = @string_number.split('').reverse.each_slice(3).to_a.map { |a| a.reverse }.reverse
+    string_name_array = []
+    num_array.each_with_index do |group, index|
+      string_name_array << handle_group(group, (num_array.length - (index + 1)))
+    end
+
+    string_name_array.flatten.join(' ')
+  end
+
+  def handle_group group, position = 0, name_array = []
+    length ||= group.length
+    elem = group.shift
+
+    case length
+    when 1
+      name_array << NAMES[elem]
+    when 2
+      name_array << NAMES[ elem + '0' ]
+      name_array << handle_group(group)
+    when 3
+      name_array << NAMES[ elem ]
+      name_array << NAMES[ '00' ]
+      name_array << handle_group(group)
+    end
+
+    pos = '000' * position
+    unless pos.empty?
+      name_array << NAMES[pos]
+    end
+
+    name_array
   end
 end
