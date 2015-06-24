@@ -18,7 +18,7 @@ describe NumToWord do
 
     it 'should set attributes @string_number and @string_name' do
       expect(@instance.instance_variable_get(:@string_number)).to eq('123')
-      expect(@instance.instance_variable_get(:@string_name)).to eq('')
+      expect(@instance.instance_variable_get(:@string_name)).to eq('one hundred twenty three')
     end
 
     it 'should remove any commas from the number' do
